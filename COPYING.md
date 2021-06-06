@@ -1,4 +1,4 @@
-To the extent possible under law, I Sam Trenholme have waived all copyright
+To the extent possible under law, I, Sam Trenholme, have waived all copyright
 and related or neighboring rights to all files in this repository. 
 This work is published from the United States.
 
