@@ -13,13 +13,13 @@ int main() {
     if(feof(stdin)) {
       puts("");
       return 0;
-      }
+    }
     printf("%02x ",a);
     if(b++ > 16) {
       puts("");
       b = 0;
-      }
-   }
- puts("");
- return 0;
- }
+    }
+  }
+  puts("");
+  return 0;
+}
