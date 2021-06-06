@@ -4,3 +4,14 @@ to make a full-blown repo for each one.
 # bin2hex
 
 Convert a binary file in to a hexadecimal representation of the file.
+
+# hex2bin
+
+Convert a hex file (e.g. the output of bin2hex) in to a binary file.
+
+# Makefile
+
+This Makefile will compile bin2hex and hex2bin.  It will also clean
+up build artifacts with `make clean`.  `make install` is not supported
+(just copy the files to `/usr/local/bin` by hand).
+
