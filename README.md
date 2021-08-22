@@ -12,7 +12,7 @@ Convert a hex file (e.g. the output of bin2hex) in to a binary file.
 # entropy
 
 Generate 160 bits of entropy as 32 ASCII bytes.  Use -DMINGW when
-compiling as a native Windows binay
+compiling as a native Windows binary via MinGW
 
 # Makefile
 
