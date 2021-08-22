@@ -9,9 +9,14 @@ Convert a binary file in to a hexadecimal representation of the file.
 
 Convert a hex file (e.g. the output of bin2hex) in to a binary file.
 
+# entropy
+
+Generate 160 bits of entropy as 32 ASCII bytes.  Use -DMINGW when
+compiling as a native Windows binay
+
 # Makefile
 
-This Makefile will compile bin2hex and hex2bin.  It will also clean
-up build artifacts with `make clean`.  `make install` is not supported
-(just copy the files to `/usr/local/bin` by hand).
+This Makefile will compile `bin2hex`, `hex2bin`, and `entropy`.  It will
+also clean up build artifacts with `make clean`.  `make install` is not
+supported (just copy the files to `/usr/local/bin` by hand).
 
