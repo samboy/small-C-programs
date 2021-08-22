@@ -5,6 +5,10 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
+#ifdef MINGW
+#include <winsock.h>
+#include <wincrypt.h>
+#endif // MINGW
 
 int main() {
 	char noise[23];
