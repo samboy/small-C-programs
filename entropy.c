@@ -14,7 +14,7 @@ int main() {
 	char noise[23];
 	// Gather 20 bytes of raw entropy from the underlying OS
 #ifndef MINGW
-	// Linux/UNIX/MaxOS use /dev/urandom for entropy
+	// Linux/UNIX/MacOS/BSD/etc. use /dev/urandom for entropy
         int a = 0;
         FILE *rfile = NULL;
         rfile = fopen("/dev/urandom","rb");
@@ -53,6 +53,7 @@ int main() {
 	// Each count "tick" is 5 bytes in the source noise and 8
 	// bytes in destination string
 	for(count = 0 ; count < 4; count++) {
+		// Make five bytes eight bytes via bit manipulation
 		toAscii[count * 8] = noise[count * 5] & 31;
 		toAscii[count * 8 + 1] =
 			((noise[count * 5] & 0xe0) >> 5) |
@@ -69,6 +70,7 @@ int main() {
 			((noise[count * 5 + 3] & 0xc0) >> 6) |
 			((noise[count * 5 + 4] & 7) << 2);
 		toAscii[count * 8 + 7] = (noise[count * 5 + 4] & 0xf8) >> 3;
+		// Convert 5-bit binary in to 8-bit ASCII
 		for(subCount = 0; subCount < 8; subCount++) {
 			// This is a very simple 5-bit binary to ASCII
 			// conversion; it's a very compact way of
