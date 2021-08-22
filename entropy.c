@@ -81,4 +81,5 @@ int main() {
 	}
 	toAscii[32] = 0;
 	printf("%s",toAscii);
+	return 0;
 }
