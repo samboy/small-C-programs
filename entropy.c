@@ -1,4 +1,6 @@
 // Public domain.  By Sam Trenholme, 2021
+// Generate 160 bits of entropy as 32 ASCII bytes.  Use -DMINGW when
+// compiling as a native Windows binary via MinGW
 
 #include <stdio.h>
 #include <stddef.h>
@@ -6,7 +8,9 @@
 
 int main() {
 	char noise[23];
+	// Gather 20 bytes of raw entropy from the underlying OS
 #ifndef MINGW
+	// Linux/UNIX/MaxOS use /dev/urandom for entropy
         int a = 0;
         FILE *rfile = NULL;
         rfile = fopen("/dev/urandom","rb");
@@ -22,6 +26,7 @@ int main() {
         }
         noise[20] = 0;
 #else // MINGW
+	// Windows uses its own thing for entropy
         HCRYPTPROV CryptContext;
         int q;
         q = CryptAcquireContext(&CryptContext, NULL, NULL, PROV_RSA_FULL,
