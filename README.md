@@ -14,6 +14,10 @@ Convert a hex file (e.g. the output of bin2hex) in to a binary file.
 Generate 160 bits of entropy as 32 ASCII bytes.  Use -DMINGW when
 compiling as a native Windows binary via MinGW
 
+# xLFSR
+
+A small program to look at and research LFSR variants.
+
 # Makefile
 
 This Makefile will compile `bin2hex`, `hex2bin`, and `entropy`.  It will
